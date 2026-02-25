@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from files import views
+#from . import views ( . refers to the current directory)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index)
+    path('', views.index, name="index"),
+    path('files/', views.files, name="files")
+
 ]
